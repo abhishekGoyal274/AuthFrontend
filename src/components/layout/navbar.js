@@ -6,7 +6,7 @@ import LogoutBtn from '../auth/logoutBtn';
 
 function Navbar() {
     const { loggedIn } = useContext(AuthContext);
-    console.log(loggedIn);
+    // console.log(loggedIn);
     return (
         <>
             <Link to="/">Home</Link>
