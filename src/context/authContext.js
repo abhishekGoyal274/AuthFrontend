@@ -6,7 +6,7 @@ const AuthContext = createContext();
 function AuthContextProvider(props) {
     const [loggedIn, setLoggedIn] = useState(undefined)
     async function getLoggedIn() {
-        const res = await axios.get("http://localhost:5000/auth/loggedIn");
+        const res = await axios.get("https://auth-api-vkc5.onrender.com/auth/loggedIn");
         // console.log(res,res.data);
         setLoggedIn(res.data);
     }

@@ -7,7 +7,7 @@ export default function Customers() {
   const [customers, setCustomers] = useState([]);
   const getCustomers = async () => {
     try {
-      const gotCstomers = await axios.get("http://localhost:5000/customer")
+      const gotCstomers = await axios.get("https://auth-api-vkc5.onrender.com/customer")
       setCustomers(gotCstomers.data)
     } catch (err) {
       console.log(err);
