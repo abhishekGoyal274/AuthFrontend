@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function home() {
   return (
-    <div>home</div>
+    <div className='centeredHome' style={{fontFamily: "Josefin Sans, sans-serif"}}>Auth and Login</div>
   )
 }

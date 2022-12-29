@@ -10,7 +10,8 @@ export default function Customers() {
       const gotCstomers = await axios.get("https://auth-api-vkc5.onrender.com/customer")
       setCustomers(gotCstomers.data)
     } catch (err) {
-      console.log(err);
+      alert(err.response.data.errorMessage)
+      // console.log(err);
     }
   }
 
@@ -21,8 +22,8 @@ export default function Customers() {
 
   return (
     <>
-      <h1>Customers</h1>
       <CustomerForm getCust = {getCustomers} />
+      <h1 style={{textAlign:'center'}}>Customer Details</h1>
       <CustomerList customers = {customers}/>
     </>
   )

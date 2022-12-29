@@ -7,25 +7,54 @@ export default function CustomerForm(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const customerData = {name: name}; 
+      const customerData = { name: name };
       await registerCustomer(customerData);
       setName("");
       props.getCust();
-     }
+    }
     catch (err) {
-      console.error(err);
+      alert(err.response.data.errorMessage)
+      // console.error(err);
     }
   }
   return (
-    <form onSubmit={handleSubmit}>
-      Customer Name:
-      <input
-        type="text"
-        value={name}
-        placeholder="Customer Name"
-        onChange={(e) => setName(e.target.value)}
-      ></input>
-      <button type="submit"> Submit </button>
-    </form>
+    <>
+      <div className="form-container">
+
+        {/******************** Register **************************/}
+        <form className="register-form form-style-10" onSubmit={handleSubmit}>
+
+          <h1>Register Customer</h1>
+
+          {/* Section 1 */}
+          <div className="section">
+            <span>*</span>Customer Name
+          </div>
+          <div className="inner-wrap">
+            <input
+              type="text"
+              value={name}
+              placeholder="Customer Name"
+              className="form-field"
+              onChange={(e) => setName(e.target.value)}
+            />
+            <br />
+          </div>
+
+          {/* ------------------------------------ */}
+
+          <div className="button-section">
+            <button
+              className="waves-effect waves-light btn center-align white-text text-darken-2 card-panel indigo darken-4  z-depth-1"
+              type="submit"
+            >
+              Register Customer
+
+            </button>
+          </div>
+        </form>
+      </div>
+    </>
+
   )
 }
