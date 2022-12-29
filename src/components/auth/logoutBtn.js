@@ -13,7 +13,7 @@ export default function LogoutBtn() {
         navigate("/login")
     }
   return (
-    <button onClick={logout}>
+    <button className="btn btn-outline-success my-2 my-sm-0" onClick={logout}>
         Logout
     </button>
 

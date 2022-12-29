@@ -4,13 +4,27 @@ export default function CustomerList(props) {
   function renderCustomers() {
     return props.customers.map((customer, i) => {
       return (
-        <li key={customer._id}> Name: {customer.name},CreatedBy:{customer.createdBy}</li>
+        <tr key={customer._id}>
+          <th>{customer.name}</th>
+          <th> {customer.createdBy}</th>
+        </tr>
       );
     })
   }
   return (
-    <ul>
-      {renderCustomers()}
-    </ul>
+    <table
+      className="styled-table"
+      style={{ marginLeft: "10vw", width: "80vw" }}
+    >
+      <thead>
+        <tr>
+          <th>Customer Name</th>
+          <th>CreatedBy</th>
+        </tr>
+      </thead>
+      <tbody>
+        {renderCustomers()}
+      </tbody>
+    </table>
   )
 }
